@@ -6,14 +6,14 @@
 //
 
 import Foundation
-
+//логика
 class ContentViewModel: ObservableObject {
     @Published var angle: Double = 0
     @Published var flag: Bool = false
-    @Published var rotation: Double = 0
     private var randomCount = 0
     
     func angleChange() {
+        flag = Bool.random()
         if !flag { angle += 5 }
         if flag { angle -= 5 }
         if angle >= 360{ angle -= 360 }

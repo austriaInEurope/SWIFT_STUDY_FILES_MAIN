@@ -23,12 +23,13 @@ struct ContentViewMain: View {
             
                 
             Button {
+                //проверка сколько раз вращался (27-29)
                 if self.angle != 0 { print("вращался уже")
-                    self.angle = 0
+                    self.angle = 0 // если вращался -> обнуляем угол вращения
                 }
                 self.angle += 5
                 
-                //if self.angle =
+                
                 //angle = contentViewModel.angle
                 contentViewModel.degreeShift()
                 
@@ -53,7 +54,6 @@ struct ContentViewMain: View {
                 print("работаю, \(self.angle)")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + Double.random(in: 0.01...0.1)) { self.angle += 5 }
-                
             } else {
                 DispatchQueue.main.asyncAfter(deadline: .now() + Double.random(in: 0.01...0.1)) { self.angle -= 5 }
             }
